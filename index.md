@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## ECE-202 Project
 
 This project aims to implement a kalman filter to estimate the orientation of the Arduino chip (Arduino 33 BLE sense) using the on-board 9DOF IMU (LSM9DS1).
 
