@@ -1,37 +1,14 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/kwang-12/AHRS-on-Arduino-33-BLE-sense/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This project aims to implement a kalman filter to estimate the orientation of the Arduino chip (Arduino 33 BLE sense) using the on-board 9DOF IMU (LSM9DS1).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Using euler angles, the orientation of the Arduino chip is defined by three independent angles: yaw, pitch, and roll relative to the world frame (inertial frame). 
 
-### Markdown
+### The reasons for using Arduino 33 BLE sense are: 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+1. It includes a 9DOF (accelerometer+gyroscope+magnetometer) IMU which is essential to the filter estimation. 
+The pitch and roll angle can be easily estimated with a complementary filter and a 6 DOF IMU (accelerometer+gyroscope). However, since a 6 DOF IMU doesn’t provide the necessary information for estimating yaw position. Even the slightest noise and biases in sensor reading can cause estimated yaw position to drift.
+The additional magnetometer onboard the Arduino 33 BLE sense chip provides the critical information (earth magnetic field as a reference) for the filter to de-drift yaw position and output accurate orientation estimation.
+2. The additional bluetooth functionality means that the Arduino chip can be deployed remotely and output orientation estimations via bluetooth protocol.
+3. Minimal wiring.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kwang-12/AHRS-on-Arduino-33-BLE-sense/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
