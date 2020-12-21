@@ -38,7 +38,7 @@ The filter has 4 states, 3 inputs and 6 measurments.
 The 4 states are the 4 values from the quaternion that represented the system's orientation(q0, q1, q2, q3).
 The 3 inputs are the angular rate measured by the gyroscope(p, q, r).
 The 6 measurements are the 3 linear accelerations from the accelerometer(ax, ay, az) and 3 magnetic field strength from the magnetometer(Mx, My, Mz).
-Magnetometer hard iron bias are: Mxb, Myb, Mzb. Sampling time is delta_t.
+Sampling time is delta_t.
 
 The prediction step in detail is:
 
