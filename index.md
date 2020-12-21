@@ -48,11 +48,11 @@ The measurement residuals are obtained:
 
 ![equation](/pics/3.png)
 
-Jacobian F
+Jacobian H
 
 ![equation](/pics/4.png)
 
-Jacobian H
+Jacobian F
 
 ![equation](/pics/5.png)
 
